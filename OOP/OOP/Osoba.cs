@@ -35,6 +35,13 @@ namespace OOP
             TimeSpan result = DateTime.Now - narozen;
             return (int)(result.Days / 365.25);
         }
+        public int Vek(int format)
+        {
+            TimeSpan result = DateTime.Now - narozen;
+            if (format == 1)
+                return result.Days;
+            return (int)(result.Days / 365.25);
+        }
         public bool Plnolety()
         {
             if (Vek() >= 18)
@@ -43,7 +50,7 @@ namespace OOP
         }
         public string Starsi(Osoba druha)
         {
-            if (druha.Vek() > this.Vek())
+            if (druha.Vek(1) > this.Vek(1))
                 return "Starší:" + druha.VypisJmeno();
             return "Starší:" + this.VypisJmeno();
         }

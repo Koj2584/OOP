@@ -22,6 +22,11 @@ namespace OOP
             Osoba prvni = new Osoba(textBox1.Text, maskedTextBox1.Text);
             Osoba druha = new Osoba(textBox3.Text, maskedTextBox2.Text);
 
+            MessageBox.Show(prvni.ToString());
+            MessageBox.Show(druha.ToString());
+            druha.NastavJmeno("Franta");
+            MessageBox.Show("Změna jména na " + druha.VypisJmeno());
+            MessageBox.Show(prvni.Starsi(druha));
         }
     }
 }
